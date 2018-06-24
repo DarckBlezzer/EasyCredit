@@ -186,20 +186,21 @@ setInterval(function(){
                         //debugger
                         if(clientsIO[item.name] && clientsIO[item.name].length > 0)
                             clientsIO[item.name].forEach(function(socketID){
-                                console.log("SocketID: ",socketID);
+                                console.log("SocketID: ",socketID , io.sockets.connected);
                                 
-                                io.sockets.connected[socketID].emit("loadData",{
-                                    informacion:{
-                                        id: item.user_id, // id usuario
-                                        user: item.name // nombre usuario
-                                    },
-                                    historial: results.filter(solicitud => solicitud.autorizado != null), //  solicitudes autorizados
-                                    solicitudes: results.filter(solicitud => solicitud.autorizado == null) // solicitudes no autorizadas
-                                });
+                                if(io.sockets.connected[socketID] != null)
+                                    io.sockets.connected[socketID].emit("loadData",{
+                                        informacion:{
+                                            id: item.user_id, // id usuario
+                                            user: item.name // nombre usuario
+                                        },
+                                        historial: results.filter(solicitud => solicitud.autorizado != null), //  solicitudes autorizados
+                                        solicitudes: results.filter(solicitud => solicitud.autorizado == null) // solicitudes no autorizadas
+                                    });
                             })
                     })
 
             })
         });
     });
-},30 * 1000)
+},10 * 1000)

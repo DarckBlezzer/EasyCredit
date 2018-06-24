@@ -13,11 +13,11 @@
 # 4 ejecutar el spa
 npm run dev
 
-# 5 ejecutar el nodejs server /src/server.js
-# path easycredit folder
+# 6 ejecutar el nodejs /src/crear_db.js
+node /src/crear_db.js
+
+# 7 ejecutar el server backend
 node /src/server.js
 
-# 6 testear :like:
+# 8 testear :like:
 ```
-
-For a detailed explanation on how things work, check out the [guide](http://vuejs-templates.github.io/webpack/) and [docs for vue-loader](http://vuejs.github.io/vue-loader).
