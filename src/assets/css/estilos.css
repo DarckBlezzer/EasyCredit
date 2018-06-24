@@ -1,0 +1,60 @@
+body, html{
+    height: 100%;
+}
+
+header{
+    background: #333;
+    padding: 10px;
+}
+
+header img{
+    height: 60px;
+}
+
+header span{
+    font-family: 'Shrikhand', cursive;
+    font-size: 30px;
+    color:white;
+    vertical-align: middle;
+}
+
+body,html{
+    /* background-image: url(../img/background.jpg); */
+    /* background-position: right top; */
+    background: #666;
+    height: 100%;
+}
+
+.container{
+    width:1025px;
+}
+
+.vertical-center {
+    height:100%;
+    width:100%;
+
+    text-align: center;  /* align the inline(-block) elements horizontally */
+    font: 0/0 a;         /* remove the gap between inline(-block) elements */
+}
+
+.vertical-center:before {    /* create a full-height inline block pseudo=element */
+    content: ' ';
+    display: inline-block;
+    vertical-align: middle;  /* vertical alignment of the inline element */
+    height: 100%;
+}
+
+.vertical-center > .container {
+    max-width: 100%;
+    display: inline-block;
+    vertical-align: middle;  /* vertical alignment of the inline element */
+    font: 16px/1 "Helvetica Neue", Helvetica, Arial, sans-serif;        /* <-- reset the font property */
+}
+
+.saceptado{
+    background-color: #69ffb4;
+  }
+  
+  .srechazado{
+    background-color: rgb(255, 175, 175);
+  }
